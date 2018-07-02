@@ -35,6 +35,8 @@ static NSString *const H264FilePath = @"test.h264";
 @property (nonatomic,strong)UIButton *startBtn;
 @property (nonatomic,strong)UILabel *titleLabel;
 
+@property ()int abc;
+
 @end
 
 @implementation ViewController
@@ -44,6 +46,7 @@ static NSString *const H264FilePath = @"test.h264";
     
     //初始化UI和参数
     [self initUIAndParameter];
+    
 }
 
 
@@ -374,7 +377,7 @@ void didCompressH264(void *outputCallbackRefCon, void *sourceFrameRefCon, OSStat
 
 - (UIButton *)startBtn{
     if (!_startBtn) {
-        _startBtn = [[UIButton alloc]initWithFrame:CGRectMake(150, 30, 100, 30)];
+        _startBtn = [[UIButton alloc]initWithFrame:CGRectMake(220, 30, 100, 50)];
         [_startBtn setBackgroundColor:[UIColor cyanColor]];
         [_startBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_startBtn setTitle:@"start" forState:UIControlStateNormal];
@@ -385,7 +388,7 @@ void didCompressH264(void *outputCallbackRefCon, void *sourceFrameRefCon, OSStat
 
 - (UILabel *)titleLabel{
     if (!_titleLabel) {
-        _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 30, 100, 30)];
+        _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(50, 30, 150, 30)];
         _titleLabel.textColor = [UIColor blackColor];
         _titleLabel.text = @"测试H264编码";
     }
